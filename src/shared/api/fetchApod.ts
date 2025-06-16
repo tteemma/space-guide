@@ -1,14 +1,16 @@
 import { Apod } from '@/entities/apod/model/type'
-import { API_KEY } from '@/shared/api/type'
+import { fetchApi } from '../lib/fetchApi'
 export const fetchApod = async (): Promise<Apod | null> => {
-	try {
-		const resp = await fetch(
-			`https://api.nasa.gov/planetary/apod?api_key=${API_KEY}`
-		)
-		if (!resp.ok) throw new Error('Pizdes error')
-		return resp.json()
-	} catch (err) {
-		console.error(err)
-		return null
-	}
+	return await fetchApi<Apod>({
+		unicUrl: '/planetary/apod',
+		options: {
+			cache: 'force-cache',
+			next: {
+				revalidate: 86400,
+			},
+		},
+		queryParams: {
+			date: `2005-09-24`,
+		},
+	})
 }

@@ -1,0 +1,22 @@
+.carousel {
+	display: flex;
+	overflow-x: auto;
+	scroll-snap-type: x mandatory;
+	gap: 1rem;
+	padding-bottom: 1rem;
+
+	&::-webkit-scrollbar {
+		height: 12px;
+	}
+	&::-webkit-scrollbar-thumb {
+		background: #333;
+		border-radius: 8px;
+		width: 400px;
+	}
+}
+
+.slide {
+	flex-shrink: 0;
+	scroll-snap-align: start;
+	min-width: 500px;
+}

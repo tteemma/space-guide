@@ -16,28 +16,36 @@
 .apod__section {
 	flex: 1;
 	padding: 1rem;
-	scroll-behavior: smooth;
-	user-select: none;
-	scrollbar-width: none;
 	overflow: auto;
 	border-right: 1px solid #222;
+	scroll-behavior: smooth;
+	scrollbar-width: none;
+	user-select: none;
 }
 
 .NEO {
 	flex: 1;
 	padding: 1rem;
 	overflow: auto;
+
 	.neoHeader {
 		display: flex;
 		justify-content: space-between;
+		align-items: center;
 	}
 }
 
 .rover__photo {
-	height: 50vh;
+	height: auto;
 	background-color: #111;
-	display: flex;
-	align-items: center;
-	justify-content: center;
 	padding: 1rem;
+	display: flex;
+	flex-direction: column;
+
+	h2 {
+		margin-bottom: 1rem;
+		text-align: center;
+		font-size: 1.4rem;
+		color: #00bfa5;
+	}
 }

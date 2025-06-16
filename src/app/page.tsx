@@ -4,6 +4,8 @@ import style from './page.module.scss'
 import { fetchNEO } from '@/shared/api/fetchNEO'
 import AsteroidSummary from '@/widgets/asteroid-summary/ui/AsteroidSummary'
 import FilterPanel from '@/features/filters/ui/FilterPanel'
+import { fetchReoverPhoto } from '@/shared/api/fetchReoverPhoto'
+import RoverCarousel from '@/widgets/rover-carousel/ui/RoverCarousel'
 
 export const dynamic = 'force-static'
 
@@ -11,6 +13,7 @@ export default async function Home() {
 	const apods = await fetchApod()
 	const neo = await fetchNEO()
 	const asteroids = neo ? Object.values(neo?.near_earth_objects).flat() : []
+	const roverPhotos = await fetchReoverPhoto()
 
 	return (
 		<main className={style.page}>
@@ -33,7 +36,7 @@ export default async function Home() {
 
 			<section className={style.rover__photo}>
 				<h2>🚀 Карусель марсоходов</h2>
-				{/* TODO: вставить виджет rover-carousel */}
+				<RoverCarousel roverPhotos={roverPhotos?.photos ?? []} />
 			</section>
 		</main>
 	)

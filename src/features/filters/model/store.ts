@@ -4,5 +4,5 @@ import { setAsteroidFilters } from './event'
 
 export const $neoFilters = createStore<FilterAsteroid>(defaultFilter).on(
 	setAsteroidFilters,
-	(_, payload) => ({ ...defaultFilter, ...payload })
+	(state, payload) => ({ ...state, ...payload })
 )
