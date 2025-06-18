@@ -3,9 +3,10 @@
 import { useUnit } from 'effector-react'
 import { $searchParams } from '../model/store'
 import { setSearchParams } from '../model/event'
-import { AsteroidSearchParams } from '../model/types'
+import { AsteroidSearchParams, defaultParams } from '../model/types'
 import { useForm } from 'react-hook-form'
 import styles from './SearchForm.module.scss'
+import { equal } from 'node:assert'
 
 const SearchForm = () => {
 	const currentParams = useUnit($searchParams)
@@ -14,12 +15,17 @@ const SearchForm = () => {
 		register,
 		formState: { errors },
 		handleSubmit,
+		reset,
 	} = useForm<AsteroidSearchParams>({
 		defaultValues: currentParams,
 	})
 
 	const onSubmit = (data: AsteroidSearchParams) => {
 		setSearchParams(data)
+	}
+	const handleReset = () => {
+		reset()
+		setSearchParams(defaultParams)
 	}
 
 	return (
@@ -75,6 +81,13 @@ const SearchForm = () => {
 
 			<button type='submit' className={styles.submitButton}>
 				🔍 Search
+			</button>
+			<button
+				type='button'
+				onClick={handleReset}
+				className={styles.resetButton}
+			>
+				❌Reset
 			</button>
 		</form>
 	)

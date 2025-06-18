@@ -1,0 +1,28 @@
+.page {
+	padding: 2rem;
+	max-width: 960px;
+	margin: 0 auto;
+	font-family: 'Segoe UI', sans-serif;
+	color: #f5f5f5;
+	background-color: #121212;
+	h1 {
+		font-size: 2rem;
+		margin-bottom: 1.5rem;
+		text-align: center;
+		color: #80d0c7;
+	}
+
+	section {
+		background: #1e1e1e;
+		padding: 1.5rem;
+		margin-bottom: 2rem;
+		border-radius: 12px;
+		box-shadow: 0 0 10px rgba(0, 255, 255, 0.1);
+	}
+
+	section h2 {
+		margin-bottom: 1rem;
+		color: #ffd580;
+		font-size: 1.4rem;
+	}
+}
