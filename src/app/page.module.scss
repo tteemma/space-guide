@@ -27,7 +27,12 @@
 	flex: 1;
 	padding: 1rem;
 	overflow: auto;
+	.seachLink {
+		outline: none;
+		text-decoration: none;
 
+		color: #fff;
+	}
 	.neoHeader {
 		display: flex;
 		justify-content: space-between;

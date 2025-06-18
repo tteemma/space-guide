@@ -6,6 +6,7 @@ import AsteroidSummary from '@/widgets/asteroid-summary/ui/AsteroidSummary'
 import FilterPanel from '@/features/filters/ui/FilterPanel'
 import { fetchReoverPhoto } from '@/shared/api/fetchReoverPhoto'
 import RoverCarousel from '@/widgets/rover-carousel/ui/RoverCarousel'
+import Link from 'next/link'
 
 export const dynamic = 'force-static'
 
@@ -27,7 +28,10 @@ export default async function Home() {
 
 				<section className={style.NEO}>
 					<h2 className={style.neoHeader}>
-						☄️ Near Earth Objects
+						<Link href='search' className={style.seachLink}>
+							☄️ Near Earth Objects
+						</Link>
+						{/* ☄️ Near Earth Objects */}
 						<FilterPanel />
 					</h2>
 					<AsteroidSummary asteroids={asteroids} />

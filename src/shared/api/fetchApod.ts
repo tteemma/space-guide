@@ -9,8 +9,8 @@ export const fetchApod = async (): Promise<Apod | null> => {
 				revalidate: 86400,
 			},
 		},
-		queryParams: {
-			date: `2005-09-24`,
-		},
+		// queryParams: {
+		// 	date: `2005-09-24`,
+		// },
 	})
 }
