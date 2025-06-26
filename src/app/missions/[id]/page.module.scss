@@ -1,0 +1,28 @@
+.page {
+	padding: 2rem;
+	background-color: #0a0a0a;
+	color: #f0f0f0;
+	font-family: 'Segoe UI', sans-serif;
+	line-height: 1.6;
+	min-height: 100vh;
+}
+
+.title {
+	text-align: center;
+	font-size: 2rem;
+	margin-bottom: 2rem;
+	color: #e6b800;
+}
+
+.sectionTitle {
+	font-size: 1.5rem;
+	margin: 2rem 0 1rem;
+	color: #00d1ff;
+}
+
+.photosGrid {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+	gap: 1.5rem;
+	margin-top: 1rem;
+}

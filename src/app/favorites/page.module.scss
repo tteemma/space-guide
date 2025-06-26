@@ -1,0 +1,19 @@
+.page {
+	padding: 2rem;
+	min-height: 100vh;
+	background: linear-gradient(to bottom, #0d0d0d, #1a1a1a);
+	color: white;
+}
+.link {
+	text-decoration: none;
+}
+
+.pageTitle {
+	text-align: center;
+	font-size: 2.5rem;
+	margin-bottom: 3rem;
+	color: #ffd700;
+	&:hover {
+		text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+	}
+}

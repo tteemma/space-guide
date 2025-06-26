@@ -9,6 +9,7 @@ import { useUnit } from 'effector-react'
 const ApodList = () => {
 	const apods = useUnit($apods)
 	const loadApods = useUnit(addNewApodFx)
+
 	return (
 		<main>
 			<button onClick={loadApods}>LOAD APOD</button>

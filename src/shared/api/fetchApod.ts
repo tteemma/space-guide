@@ -10,7 +10,7 @@ export const fetchApod = async (): Promise<Apod | null> => {
 			},
 		},
 		// queryParams: {
-		// 	date: `2005-09-24`,
+		// 	date: `2000-10-24`,
 		// },
 	})
 }

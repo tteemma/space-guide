@@ -4,7 +4,10 @@ import { $neoFilters } from './store'
 import { NearEarthObject } from '@/entities/asteroid/type'
 
 export const $filteredAsteroids = combine(
-	{ asteroids: $asteroids, filters: $neoFilters },
+	{
+		asteroids: $asteroids,
+		filters: $neoFilters,
+	},
 	({ asteroids, filters }): NearEarthObject[] => {
 		let result = [...asteroids]
 

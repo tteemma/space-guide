@@ -7,6 +7,7 @@ import FilterPanel from '@/features/filters/ui/FilterPanel'
 import { fetchReoverPhoto } from '@/shared/api/fetchReoverPhoto'
 import RoverCarousel from '@/widgets/rover-carousel/ui/RoverCarousel'
 import Link from 'next/link'
+import InitFavoriteApod from '@/shared/InitFavoriteApod'
 
 export const dynamic = 'force-static'
 
@@ -14,11 +15,19 @@ export default async function Home() {
 	const apods = await fetchApod()
 	const neo = await fetchNEO()
 	const asteroids = neo ? Object.values(neo?.near_earth_objects).flat() : []
-	const roverPhotos = await fetchReoverPhoto()
-
+	const roverPhotos = await fetchReoverPhoto('curiosity')
 	return (
 		<main className={style.page}>
+			<InitFavoriteApod />
 			<h1 style={{ textAlign: 'center', margin: '1rem 0' }}>🌌 Space Guide</h1>
+			<div style={{ textAlign: 'center', marginBottom: '1rem' }}>
+				<Link href='/ufo' className={style.ufoLink}>
+					<h2>🛸 UFO Tracker</h2>
+				</Link>
+				<Link href='/favorites' className={style.favoritesLink}>
+					⭐ Go to Favorites
+				</Link>
+			</div>
 
 			<div className={style.top}>
 				<section className={style.apod__section}>
@@ -28,10 +37,9 @@ export default async function Home() {
 
 				<section className={style.NEO}>
 					<h2 className={style.neoHeader}>
-						<Link href='search' className={style.seachLink}>
+						<Link href='search' className={style.searchLink}>
 							☄️ Near Earth Objects
 						</Link>
-						{/* ☄️ Near Earth Objects */}
 						<FilterPanel />
 					</h2>
 					<AsteroidSummary asteroids={asteroids} />
@@ -39,7 +47,7 @@ export default async function Home() {
 			</div>
 
 			<section className={style.rover__photo}>
-				<h2>🚀 Карусель марсоходов</h2>
+				<h2>🚀 Rover Carousel</h2>
 				<RoverCarousel roverPhotos={roverPhotos?.photos ?? []} />
 			</section>
 		</main>

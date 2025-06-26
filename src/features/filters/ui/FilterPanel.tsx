@@ -19,13 +19,13 @@ const FilterPanel = () => {
 				<label htmlFor='isHazardous'>
 					<input id='isHazardous' type='checkbox' onChange={handleHazardous} />
 					<span className={styles.customCheckbox}></span>
-					Опасен
+					Dangerous
 				</label>
 			</div>
 
 			<select onChange={handleSelect} defaultValue='' className={styles.select}>
 				<option value='' disabled>
-					Сортировка по
+					Sort by
 				</option>
 				{sortOptions.map(option => (
 					<option key={option} value={option}>

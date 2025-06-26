@@ -6,8 +6,6 @@ import { setSearchParams } from '../model/event'
 import { AsteroidSearchParams, defaultParams } from '../model/types'
 import { useForm } from 'react-hook-form'
 import styles from './SearchForm.module.scss'
-import { equal } from 'node:assert'
-
 const SearchForm = () => {
 	const currentParams = useUnit($searchParams)
 

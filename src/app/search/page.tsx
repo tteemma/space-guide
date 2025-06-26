@@ -10,7 +10,7 @@ export default function SearchPage() {
 				<SearchForm />
 			</section>
 			<section>
-				<h2>Результаты</h2>
+				<h2>Results</h2>
 				<SearchResults />
 			</section>
 		</main>

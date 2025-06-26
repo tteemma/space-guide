@@ -12,5 +12,8 @@ export const $searchResult = createStore<NearEarthObject[]>([]).on(
 sample({
 	clock: setSearchParams,
 	source: $searchParams,
+	fn: (_, payload) => payload,
 	target: fetchAsteroidsByParamsFx,
 })
+
+$searchResult.watch(dat => console.log(dat))

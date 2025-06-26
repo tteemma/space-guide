@@ -1,0 +1,40 @@
+.mapWrapper {
+	border: 2px solid #333;
+	border-radius: 12px;
+	overflow: hidden;
+	box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+	margin-top: 1rem;
+	position: relative;
+}
+
+.mapTitle {
+	position: absolute;
+	top: 12px;
+	right: 16px;
+	background: rgba(0, 0, 0, 0.6);
+	color: #fff;
+	padding: 4px 10px;
+	border-radius: 6px;
+	font-weight: bold;
+	font-size: 1rem;
+	z-index: 999;
+}
+
+.leaflet-container {
+	height: 500px;
+	width: 100%;
+	font-family: 'Segoe UI', sans-serif;
+}
+
+.leaflet-popup-content-wrapper {
+	background: rgba(0, 0, 0, 0.8);
+	color: #00ffea;
+	border-radius: 8px;
+	font-weight: bold;
+	font-size: 0.9rem;
+	padding: 8px;
+}
+
+.leaflet-popup-tip {
+	background: rgba(0, 0, 0, 0.8);
+}
