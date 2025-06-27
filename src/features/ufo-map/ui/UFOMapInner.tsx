@@ -2,7 +2,14 @@
 
 import { useUnit } from 'effector-react'
 import 'leaflet/dist/leaflet.css'
-import { MapContainer, TileLayer, Marker, Popup, Circle } from 'react-leaflet'
+import {
+	MapContainer,
+	TileLayer,
+	Marker,
+	Popup,
+	Circle,
+	CircleMarker,
+} from 'react-leaflet'
 import { $ufoMapCoords } from '../model/store'
 import RenderProps from '@/shared/lib/RenderProps'
 import styles from './UFOMapInner.module.scss'
@@ -47,10 +54,11 @@ const UFOMapInner = () => {
 				<RenderProps
 					items={ufoSightings}
 					render={ufoSighting => (
-						<Marker
+						<CircleMarker
 							key={ufoSighting.id}
-							position={[ufoSighting.lat, ufoSighting.lng]}
-							icon={emptyIcon}
+							center={[ufoSighting.lat, ufoSighting.lng]}
+							radius={0}
+							color='red'
 						>
 							<Circle
 								center={[ufoSighting.lat, ufoSighting.lng]}
@@ -58,7 +66,7 @@ const UFOMapInner = () => {
 								color='red'
 							></Circle>
 							<Popup>{ufoSighting.title}</Popup>
-						</Marker>
+						</CircleMarker>
 					)}
 				/>
 
